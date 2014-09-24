@@ -59,6 +59,10 @@ class MenubarNotifier(NSObject):
 
 
 def main():
+    # Hide the dock icon
+    info = NSBundle.mainBundle().infoDictionary()
+    info["LSBackgroundOnly"] = "1"
+
     app = NSApplication.sharedApplication()
     delegate = MenubarNotifier.alloc().init()
     app.setDelegate_(delegate)
