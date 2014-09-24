@@ -9,7 +9,7 @@ PyObjC. Make sure you have PyObjC installed - you can do this using MacPorts
 or Homebrew.
 
 Call the script with the desired notification as the first and only argument:
-  ./menubarnotifier "Notification Text"
+  ./menubarnotifier.py "Notification Text"
 
 You may have to add executable permissions to the file first:
   chmod +x ./menubarnotifier.py
