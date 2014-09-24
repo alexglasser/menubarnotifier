@@ -33,7 +33,7 @@ class MenubarNotifier(NSObject):
         NSLog("Loaded successfully.")
         # Get notification text from argv[1], if possible.
         try:
-            display_text = argv[1]
+            display_text = " ".join(argv[1:])
         except IndexError:
             display_text = "Default Text"
         NSLog("Notification is '{}'".format(display_text))
