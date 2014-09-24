@@ -27,7 +27,7 @@ Open your ~/.bash_profile and add/rename the following function:
 
 # MenubarNotifier function
 mn () {
-    /path/to/menubarnotifier.py $1 2>/dev/null &
+    /path/to/menubarnotifier.py "$1" 2>/dev/null &
 }
 
 Restart your Terminal. This will allow the script to be run like this:
