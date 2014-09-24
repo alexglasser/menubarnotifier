@@ -1,0 +1,14 @@
+MenubarNotifier
+menubarnotifier.py
+
+Alex Glasser
+September 23, 2014
+
+This is a simple script to display a message in the Mac OS X menubar using 
+PyObjC. Make sure you have PyObjC installed - you can do this using MacPorts 
+or Homebrew.
+
+Call the script with the desired notification as the first and only argument:
+  ./menubarnotifier "Notification Text"
+
+Feel free to use this code for whatever you want. 
