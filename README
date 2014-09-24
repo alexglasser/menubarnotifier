@@ -11,4 +11,7 @@ or Homebrew.
 Call the script with the desired notification as the first and only argument:
   ./menubarnotifier "Notification Text"
 
+You may have to add executable permissions to the file first:
+  chmod +x ./menubarnotifier.py
+
 Feel free to use this code for whatever you want. 
