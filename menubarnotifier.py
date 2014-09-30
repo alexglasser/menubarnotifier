@@ -16,6 +16,7 @@ Suggested: Redirect stderr to /dev/null and run the script in the background:
 '''
 
 from sys import argv
+import logging
 try:
     from PyObjCTools import AppHelper
     from Foundation import *
@@ -24,19 +25,22 @@ except ImportError:
     print "Failed to import from PyObjC."
     exit(-1)    
 
+logger = logging.getLogger()
+logger.propagate = False
+
 start_time = NSDate.date()
 
 class MenubarNotifier(NSObject):
     state = 'ok'
 
     def applicationDidFinishLaunching_(self, sender):
-        NSLog("Loaded successfully.")
+        logger.debug("Loaded successfully.")
         # Get notification text from argv[1], if possible.
         try:
             display_text = " ".join(argv[1:])
         except IndexError:
             display_text = "Default Text"
-        NSLog("Notification is '{}'".format(display_text))
+        logger.debug("Notification is '{}'".format(display_text))
 
         self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength_(NSVariableStatusItemLength)
         self.statusItem.setTitle_(display_text)          # argv[1] or "Default Text"
@@ -50,11 +54,11 @@ class MenubarNotifier(NSObject):
         self.timer.fire()
 
     def tick_(self, notification):
-        NSLog("state is {}".format(self.state))
+        logger.info("state is {}".format(self.state))
 
     def statusItemClicked_(self, notification):
         ''' Closes the application when clicked '''
-        NSLog("Notification was clicked. Goodbye.")
+        logger.info("Notification was clicked. Goodbye.")
         AppHelper.stopEventLoop()
 
 
