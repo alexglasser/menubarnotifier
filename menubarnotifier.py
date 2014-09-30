@@ -11,8 +11,8 @@ Make sure you have PyObjC installed - you can do this using MacPorts or Homebrew
 
 Call the script with the desired notification as argv[1]:
   ./menubarnotifier.py "Notification Text"
-Suggested: Redirect stderr to /dev/null and run the script in the background:
-  ./menubarnotifier.py "Notification Text" 2>/dev/null &
+Suggested: Run the script in the background so you can continue using your shell.
+  ./menubarnotifier.py "Notification Text" &
 '''
 
 from sys import argv
