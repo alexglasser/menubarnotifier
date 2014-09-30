@@ -41,6 +41,7 @@ mn () {
 ```
 
 Restart your Terminal. This will allow the script to be run like this:
+
 ``$ mn "Notification Text"``
 
 ...and will not require any redirection or the ampersand. 
