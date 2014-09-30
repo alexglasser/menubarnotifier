@@ -1,5 +1,6 @@
 MenubarNotifier
 ===
+
 menubarnotifier.py
 
 Alex Glasser
@@ -10,15 +11,19 @@ PyObjC. Make sure you have PyObjC installed - you can do this using MacPorts
 or Homebrew.
 
 Call the script with the desired notification as the first and only argument:
+
 ``$ ./menubarnotifier.py "Notification Text"``
 
 You may have to add executable permissions to the file first:
+
 ``$ chmod +x ./menubarnotifier.py``
 
 ~~This does use NSLog which writes to stderr by default. The way to bypass the 
 logging is to redirect stderr to /dev/null with:~~
 
 ~~``$ ./menubarnotifier.py "Notification Text" 2>/dev/null``~~
+
+_This script no longer logs using NSLog, so redirecting stderr to /dev/null is not required._
 
 You will also want to run this in the background so it does not require 
 Ctrl+C to allow you to continue using your shell:
@@ -40,4 +45,5 @@ Restart your Terminal. This will allow the script to be run like this:
 
 ...and will not require any redirection or the ampersand. 
 
+===
 _Feel free to use this code for whatever you want._
