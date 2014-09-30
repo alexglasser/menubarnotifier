@@ -36,7 +36,7 @@ Open your ~/.bash_profile and add/rename the following function:
 
 ```
 mn () {
-    /path/to/menubarnotifier.py "$1" &
+    /path/to/menubarnotifier.py "$*" &
 }
 ```
 
